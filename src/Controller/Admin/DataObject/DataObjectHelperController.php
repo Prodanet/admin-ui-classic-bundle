@@ -465,7 +465,7 @@ class DataObjectHelperController extends AdminAbstractController
             return ($a['position'] < $b['position']) ? -1 : 1;
         });
 
-        $frontendLanguages = Tool\Admin::reorderWebsiteLanguages(\Pimcore\Tool\Admin::getCurrentUser(), $config['general']['valid_languages']);
+        $frontendLanguages = Tool\Admin::reorderWebsiteLanguages(\Pimcore\Tool\Admin::getCurrentUser(), $config['general']['valid_languages'], true);
         if ($frontendLanguages) {
             $language = $frontendLanguages[0];
         } else {
